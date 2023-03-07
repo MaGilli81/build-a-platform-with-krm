@@ -14,7 +14,7 @@ resource "google_sql_database_instance" "cymbal-dev" {
   region           =  "us-east1"
 
   settings {
-    tier = "db-custom-1-3840"
+    tier = "db-g1-small"
   }
 }
 
@@ -51,7 +51,7 @@ resource "google_sql_database_instance" "cymbal-staging" {
   region           = "us-central1"
 
   settings {
-    tier = "db-custom-1-3840"
+    tier = "db-g1-small"
   }
 }
 
@@ -86,7 +86,7 @@ resource "google_sql_database_instance" "cymbal-prod" {
   region           = "us-west1"
 
   settings {
-    tier = "db-custom-1-3840"
+    tier = "db-g1-small"
   }
 }
 
