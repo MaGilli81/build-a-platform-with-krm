@@ -5,7 +5,7 @@
 
 # Each GKE cluster will have 4 nodes. 
 variable "gke_num_nodes" {
-  default     = 4
+  default     = 3
   description = "number of gke nodes"
 }
 
@@ -67,7 +67,7 @@ resource "google_container_node_pool" "admin-nodes" {
       env = var.project_id
     }
 
-    machine_type = "e2-standard-4"
+    machine_type = "e2-small"
     tags         = ["gke-node", "${var.project_id}-gke"]
     metadata = {
       disable-legacy-endpoints = "true"
@@ -113,8 +113,8 @@ resource "google_container_node_pool" "dev-nodes" {
       env = var.project_id
     }
 
-    # preemptible  = true
-    machine_type = "e2-standard-4"
+    preemptible  = true
+    machine_type = "e2-small"
     tags         = ["gke-node", "${var.project_id}-gke"]
     metadata = {
       disable-legacy-endpoints = "true"
@@ -160,8 +160,8 @@ resource "google_container_node_pool" "staging-nodes" {
       env = var.project_id
     }
 
-    # preemptible  = true
-    machine_type = "e2-standard-4"
+    preemptible  = true
+    machine_type = "e2-small"
     tags         = ["gke-node", "${var.project_id}-gke"]
     metadata = {
       disable-legacy-endpoints = "true"
@@ -207,8 +207,8 @@ resource "google_container_node_pool" "prod-nodes" {
       env = var.project_id
     }
 
-    # preemptible  = true
-    machine_type = "e2-standard-4"
+    preemptible  = true
+    machine_type = "e2-small"
     tags         = ["gke-node", "${var.project_id}-gke"]
     metadata = {
       disable-legacy-endpoints = "true"
