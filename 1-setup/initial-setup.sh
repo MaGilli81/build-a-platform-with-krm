@@ -1,7 +1,7 @@
 #!/bin/bash 
  export PROJECT_ID=$(gcloud config get-value project)
  export PROJECT_NUMBER=$(gcloud projects describe ${PROJECT_ID} --format="value(projectNumber)")
- export GITHUB_USERNAME="MaGilli81"
+ export GITHUB_USERNAME=
 
 
  gcloud config set project ${PROJECT_ID}
