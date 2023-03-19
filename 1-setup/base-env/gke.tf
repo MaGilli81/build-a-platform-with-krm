@@ -108,7 +108,7 @@ resource "google_container_node_pool" "dev-nodes" {
       "https://www.googleapis.com/auth/servicecontrol",
       "https://www.googleapis.com/auth/trace.append", 
     ]
-
+    disk_size_gb = 20
     labels = {
       env = var.project_id
     }
@@ -155,7 +155,7 @@ resource "google_container_node_pool" "staging-nodes" {
       "https://www.googleapis.com/auth/servicecontrol",
       "https://www.googleapis.com/auth/trace.append", 
     ]
-
+    disk_size_gb = 20
     labels = {
       env = var.project_id
     }
@@ -202,7 +202,7 @@ resource "google_container_node_pool" "prod-nodes" {
       "https://www.googleapis.com/auth/servicecontrol",
       "https://www.googleapis.com/auth/trace.append", 
     ]
-
+    disk_size_gb = 20
     labels = {
       env = var.project_id
     }
